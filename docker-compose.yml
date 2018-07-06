@@ -1,0 +1,39 @@
+version: '2.0'
+
+volumes:
+  redmine-plugins:
+  redmine-themes:
+  redmine-data:
+  redmine-models:
+
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - /srv/storage/redmine/mysqlconf:/etc/mysql/conf.d
+      - /srv/storage/redmine/mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "AnyPassword"
+      MYSQL_DATABASE:      "redmine"
+    restart: always
+
+  redmine:
+    build:
+      context: .
+    image: redmine:ioyu
+    ports:
+      - 3000:3000
+    volumes:
+      - redmine-plugins:/usr/src/redmine/plugins
+      - redmine-themes:/usr/src/redmine/public/themes
+      - redmine-data:/usr/src/redmine/files
+      - redmine-models:/usr/src/redmine/app/models/
+      - /srv/storage/redmine/configuration.yml:/usr/src/redmine/config/configuration.yml
+    environment:
+      REDMINE_DB_MYSQL:        "mysql"
+      REDMINE_DB_USERNAME:     "root"
+      REDMINE_DB_PASSWORD:     "AnyPassword"
+      REDMINE_SECRET_KEY_BASE: "..."
+      REDMINE_PLUGINS_MIGRATE: 1
+    restart: always
+

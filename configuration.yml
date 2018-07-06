@@ -1,0 +1,12 @@
+production:
+  email_delivery:
+    delivery_method: :async_smtp
+    async_smtp_settings:
+      enable_starttls_auto: true
+      address: "smtp.gmail.com" 
+      port: '587'
+      domain: "smtp.gmail.com" 
+      authentication: :plain
+      user_name: "any_email@gmail.com" 
+      password: "SomePassword" 
+
