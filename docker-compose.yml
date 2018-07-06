@@ -22,7 +22,7 @@ services:
       context: .
     image: redmine:ioyu
     ports:
-      - 3000:3000
+      - 5555:3000
     volumes:
       - redmine-plugins:/usr/src/redmine/plugins
       - redmine-themes:/usr/src/redmine/public/themes
