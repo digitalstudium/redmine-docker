@@ -1,7 +1,7 @@
 production:
   email_delivery:
-    delivery_method: :async_smtp
-    async_smtp_settings:
+    delivery_method: :smtp
+    smtp_settings:
       enable_starttls_auto: true
       address: "smtp.gmail.com" 
       port: '587'
