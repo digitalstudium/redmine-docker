@@ -9,21 +9,26 @@ git clone https://github.com/digitalstudium/redmine-docker.git
 cd redmine-docker
 ```
 
-For deployment, you have to set values for parameters in these files:
+For deployment, you have to set a few values in these files:
 ### - nginx/nginx.conf:
 change example.com to your domain name
 ### - docker-compose.yml:
 change all occurrences of "AnyPassword" and "AnyKeyYouLike" to password and key you like.
-
-Also you can put plugins to redmine/plugins directory.
-They will be installed automatically after restarting of redmine container.
 
 After setting abovementioned values, run command:
 ```bash
 docker-compose up -d
 ```
 After running this command, your redmine will be available on domain address you set in nginx/nginx.conf
-All the data of both mysql and redmine instances will persist after restart in mysql/data and redmine directories
+All the data of both mysql and redmine instances will persist after restart in mysql and redmine directories
+
+## Plugins installation
+Also you can put plugins to redmine/plugins directory.
+They will be installed automatically after restarting of redmine container.
+To restart redmine, run:
+```bash
+docker-compose restart redmine
+```
 
 ## Troubleshooting
 You could create an issue for this repository
