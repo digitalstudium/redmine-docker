@@ -15,8 +15,8 @@ change example.com to your domain name
 ### - docker-compose.yml:
 change all occurrences of "AnyPassword" and "AnyKeyYouLike" to password and key you like.
 
-Also you can put plugins to redmine/plugins directory and themes to redmine/themes directory.
-They will be installed automatically after starting of redmine container.
+Also you can put plugins to redmine/plugins directory.
+They will be installed automatically after restarting of redmine container.
 
 After setting abovementioned values, run command:
 ```bash
