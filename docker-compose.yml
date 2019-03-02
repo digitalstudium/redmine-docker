@@ -4,8 +4,8 @@ services:
   mysql:
     image: mysql:5.7
     volumes:
-      - ./mysqlconf:/etc/mysql/conf.d
-      - ./mysqldata:/var/lib/mysql
+      - ./mysql/configs:/etc/mysql/conf.d
+      - ./mysql/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "AnyPassword"
       MYSQL_DATABASE:      "redmine"
