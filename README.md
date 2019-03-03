@@ -1,8 +1,15 @@
 # Redmine-docker
+
 Here you'll find all necessary files for deploying dockerized redmine
-## Prerequisites
+
+Prerequisites
+--------
+
 docker and docker-compose installed
-## Deployment
+
+Deployment
+-----
+
 Run commands:
 ```bash
 git clone https://github.com/digitalstudium/redmine-docker.git
@@ -22,13 +29,28 @@ docker-compose up -d
 After running this command, your redmine will be available on domain address you set in nginx/nginx.conf
 All the data of both mysql and redmine instances will persist after restart in mysql and redmine directories
 
-## Plugins installation
+Plugins installation
+--------
+
 Also you can put plugins to redmine/plugins directory.
 They will be installed automatically after restarting of redmine container.
-To restart redmine, run:
+To restart redmine container, run:
 ```bash
 docker-compose restart redmine
 ```
 
-## Troubleshooting
+Troubleshooting
+-------
+
 You could create an issue for this repository
+
+
+License
+-------
+
+GPLv3
+
+Author Information
+------------------
+
+Costel Shootkin, costel@digitalstudium.com
